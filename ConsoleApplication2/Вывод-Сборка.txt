@@ -1,0 +1,4 @@
+﻿1>------ Сборка начата: проект: ConsoleApplication2, Конфигурация: Debug Win32 ------
+1>ConsoleApplication2.cpp
+1>ConsoleApplication2.vcxproj -> C:\programm\ConsoleApplication2\Debug\ConsoleApplication2.exe
+========== Сборка: успешно: 1, с ошибками: 0, без изменений: 0, пропущено: 0 ==========
