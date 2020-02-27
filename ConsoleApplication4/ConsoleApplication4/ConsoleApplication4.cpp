@@ -10,7 +10,8 @@ int main()
 	int choose;
 	cout << "choose- " << endl;
 	cin >> choose;
-		if (choose == 1) {
+		if (choose == 1) 
+	{
 			int* a;
 			int i = 0, n, k = 0; ofstream fout; ifstream abc;
 			abc.open("1.txt");
@@ -36,8 +37,9 @@ int main()
 			{
 				cout << "a[" << j << "] = " << a[j] << endl;
 			}
-		}
-		if (choose == 2) {
+	}
+		else if (choose == 2) 
+	{
 			int num, a, b, n, k, m;
 			cout << "Введите a "; cin >> a;
 			cout << "Введите b>=a "; cin >> b;
@@ -70,7 +72,10 @@ int main()
 			delete[]A;
 			system("pause");
 		}
-		else { cout << "choose 1 or 2"; }
+		else 
+		{ 
+			cout << "choose 1 or 2"; 
+		}
 	}
    
 
