@@ -27,10 +27,6 @@ int main()
 		if (n>= 0) { a[i] = n; i++; }
 	}
 	abc.close();
-	for (int j = 0; j < k; j++)
-	{
-		cout << "a[" << j << "] = " << a[j] << endl;
-	}
 	prim_vb(a, k);
 	for (int j = 0; j < k; j++)
 	{
