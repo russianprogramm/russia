@@ -1,14 +1,16 @@
 ﻿#include "pch.h"
-#include <stdio.h> 
-#include <fstream> 
 #include <iostream>
+#include <fstream>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
 void prim_vb(int a[], int n);
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 	int choose;
-	cout << "choose- " << endl;
+	cout << "choose- ";
 	cin >> choose;
 		if (choose == 1) 
 	{
@@ -38,45 +40,51 @@ int main()
 				cout << "a[" << j << "] = " << a[j] << endl;
 			}
 	}
-		else if (choose == 2) 
-	{
-			int num, a, b, n, k, m;
-			cout << "Введите a "; cin >> a;
-			cout << "Введите b>=a "; cin >> b;
-			cout << "Введите n "; cin >> n;
-			cout << "Введите k "; cin >> k;
+		else if (choose == 2)
+		{
+			int  a, b, n, k, m = 0;
+			cout << "Vvedite a="; cin >> a;
+			cout << "vvedite b>=a"; cin >> b;
+			cout << "Vvedite n="; cin >> n;
+			cout << "Vvedite k="; cin >> k;
+			srand(time(NULL));
 			int* A = new int[n];
-			for (int i = 0; i < n; i++)
+			for (int f = 0; f < n; f++)
 			{
-				num = rand() % (b - a + 1) + a;
-				A[i] = num;
-			}
-			for (int i = 0; i < n; i++) { cout << A[i] << " "; }
-			cout << endl;
-			for (int i = 0; i < n; i++)
-			{
-				if (i % 2 == 1)
+				A[f] = rand() % (b - a + 1) + a;//создание первого массива
+				cout << A[f] << endl;
+				if (A[f] % 2 != 0)
 				{
-					n--;
-					m = A[i + 1];
-					A[i + 1] = k;
-					A[i + 2] = m;
-					i++;
+					m++;
 				}
 			}
-
-			for (int i = 0; i < n; i++)//вывод массива
-				cout << A[i] << " ";
-			cout << endl;
-
-			delete[]A;
-			system("pause");
+			m += n;
+			int* A2 = new int[m];
+			int mass_rem = 0;
+            cout << "n" << endl;
+			for (int j = 0; j < m+1; j++) //преобразование второго массива
+			{
+				A2[j] = A[mass_rem];
+				if (j % 2 != 0)
+				{
+					A2[j] = A[mass_rem];
+					A2[j + 1] = k;
+					j++;
+				}
+				mass_rem++;
+			}
+			for (int j = 0; j < m+1; j++)
+			{
+				cout << j << "     " << A2[j] << endl;
+			}
+			delete[] A;
+			delete[] A2;
 		}
 		else 
 		{ 
 			cout << "choose 1 or 2"; 
-		}
-	}
+	    }
+}
    
 
 void prim_vb(int a[], int n)
